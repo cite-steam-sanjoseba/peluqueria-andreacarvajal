@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- METADATOS DE AUTORÍA E INSTITUCIÓN -->
+    <meta name="author" content="Andrea Carvajal González">
+    <meta name="description" content="App de Peluquería. Proyecto CITE-STEAM IA, FP y robótica inclusiva. Coord: Sofía Merino">
+    
+    <title>Peluquería Andrea Carvajal</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#B08D82">
+    <link rel="apple-touch-icon" href="[https://i.postimg.cc/c4js0cKY/Peluqueria-Andrea-Carvajal.png](https://i.postimg.cc/c4js0cKY/Peluqueria-Andrea-Carvajal.png)">
+    
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+            background-color: #B08D82; /* Color primario de Andrea para evitar parpadeos blancos */
+        }
+        iframe {
+            border: none; width: 100vw; height: 100vh; display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- CONEXIÓN CON EL CÓDIGO DE GOOGLE -->
+    <iframe src="https://script.google.com/macros/s/AKfycbyf4RmBcH03u-XbQHHr-LTVzCAd6CGtdu472e973tY0_SVmoI6h1ed-iAB6_zKxLsHGBw/exec" allow="camera; microphone; geolocation;"></iframe>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => {
+                    console.log('SW registrado');
+                }).catch(err => console.log('Error SW', err));
+            });
+        }
+    </script>
+</body>
+</html>
